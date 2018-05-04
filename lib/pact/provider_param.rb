@@ -24,7 +24,7 @@ module Pact
     end
 
     def replace_params params
-      @params = params.map{ |k, v| [k.to_s, v] }.to_h
+      @params = params.each{ |k, v| [k.to_s, v] }.to_h
       @default_string = default_string_from_params @params
     end
 
